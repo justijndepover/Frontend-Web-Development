@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulier</title>
+        <style>
+            label{
+                width: 300px;
+                display: inline-block;
+            }
+            input{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form">
+            <fieldset>
+                <legend>Contact info</legend>
+                <label for="voornaam">Voornaam</label>
+                <input type="text" name="voornaam" id="voornaam" value="">
+                <label for="achternaam">Achternaam</label>
+                <input type="text" name="achternaam" id="achternaam" value="">
+                <label for="email">Emailadres</label>
+                <input type="text" name="email" id="email" value="">
+                <input type="button" name="verzenden" id="verzenden" value="Verzenden">
+            </fieldset>
+        </form>
+
+        <script type="text/javascript">
+            //0.variabelen
+            var frm = document.getElementById("form");
+            window.addEventListener("DOMContentLoaded", function(){ init() });
+
+            //1. initialisatie
+            var init = function(){
+                //1.0 DOM elements
+                var btn = frm.btn = document.getElementById("verzenden");
+                var vn = frm.vn = document.getElementById("voornaam");
+                var an = frm.an = document.getElementById("achternaam");
+                var em = frm.em = document.getElementById("email");
+
+                //1.1 eventlistners
+                //vermijd herhalingen -> array
+                var arrElements = new Array(frm.vn, frm.an, frm.em)
+                for (var element in arrElements){
+                    arrElements[element].addEventListener("focus", showFocus(this));
+                }
+
+                btn.addEventListener("click", function(event){return validate(event) });
+                //action stub:
+                frm.action = "javascript:alert('verzonden');window.location = this.location";
+            }
+
+            //2. Methods
+            var validate = function(event){
+                //feature detectie (GEEN BROWSER DETECTIE)
+                if (event.preventDefault){
+                    event.preventDefault();
+                }
+                else{
+                    event.ReturnValue = false;
+                }
+                var isValidForm = false;
+                //validaties
+
+                //validForm = isValidEmail && isValidNaam
+                return isValidForm;
+            }
+
+            var showFocus = function(elem){
+                elem.className = 'focused';
+            }
+
+            var isRequiredField = function (element){
+                if (element) {
+                    if (element.value == '') {
+
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
