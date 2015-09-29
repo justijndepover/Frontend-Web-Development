@@ -1,0 +1,3 @@
+function saySomething(){
+    return "something";
+}
