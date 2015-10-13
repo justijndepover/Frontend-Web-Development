@@ -52,8 +52,8 @@ gulp.task("js-build", function(){
         .pipe(jshint.reporter(jsstylish))
         .pipe(sourcemaps.init())
         .pipe(concat("app.min.js"))
-        .pipe(sourcemaps.write())
         .pipe(uglify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest("./app/dist/js"))
         .pipe(notify({message: 'js built'}));
 });

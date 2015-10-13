@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+</head>
+<body>
+    <script src="js/Particle.js"></script>
+    <script>
+        //init();
+        //function init(){}
+        // is hetzelfde als self invocing function: (function(){ code... })();
+
+        (function(){
+            "use strict";
+            var SCREEN_WIDTH = window.innerWidth,
+                SCREEN_HEIGTH = window.innerHeight,
+                HALF_WIDTH = SCREEN_WIDTH / 2,
+                HALF_HEIGHT = SCREEN_HEIGTH / 2,
+
+                canvas = document.createElement("canvas"),
+                context = canvas.getContext("2d"),
+                particles = [],
+                MAX_PARTICLES = 1000;
+
+            (function setup(){
+                var container = document.createElement('div');
+                document.body.appendChild(container);
+
+                canvas.width = SCREEN_WIDTH;
+                canvas.height = SCREEN_HEIGTH;
+                container.appendChild(canvas);
+
+                context.fillStyle = "rgb(0,0,0)";
+                context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGTH);
+
+            })();
+
+            setInterval(loop, 1000 / 30);
+
+            function loop(){
+                context.fillStyle = "rgb(0,0,0)";
+                context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGTH);
+
+                makeParticles(4);
+                for(var i = 0, l = particles.length; i < l ; i++){
+                    var particle = particles[i];
+                    particle.update();
+                    particle.render(context);
+                }
+
+                while(particles.length > MAX_PARTICLES){
+                    particles.shift();
+                }
+            }
+
+            function makeParticles(particleCount){
+                for(var i = 0; i<particleCount; i++){
+                    var particle = new Particle(HALF_WIDTH, HALF_HEIGHT);
+                    particle.velX = (Math.random() * 20) - 10;
+                    particle.velY = (Math.random() * 20) - 10;
+
+                    particle.drag = 0.999;
+                    particle.gravity = 0.6;
+                    particle.size = Math.floor(Math.random() * 5);
+
+                    particles.push(particle);
+                }
+            }
+
+        })();
+    </script>
+</body>
+</html>
