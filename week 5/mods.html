@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <script>
+
+        //Object Literal
+        var addModule = (function(){
+            "use strict";
+            return {
+                exe: function () {
+                    if (arguments.length > 1) {
+                        var result = 0;
+                        for (var i = arguments.length - 1; i >= 0; i--) {
+                            var p = arguments[i];
+                            if (typeof(p) === "number"){
+                                result += arguments[i];
+                            }
+                        }
+                        return result;
+                    }
+                    return arguments.length === 1 ? arguments[0] : 0;
+                }
+            }
+        })();
+
+        var divideModule = (function(){
+            "use strict";
+            return{
+                exe: function(){
+                    return 2;
+                }
+            }
+        })();
+
+        //bij self invoking function moeten de argumenten achteraan in je functie OOK meegegeven worden:
+        //  (function(arg1, arg2){})(arg1,arg2);
+        var Calculator = (function(addModule, divideModule) {
+            return {
+                add: addModule.exe,
+                divide: divideModule.exe
+            }
+        })(addModule, divideModule);
+
+
+        Calculator.add(1,2);
+        Calculator.divide(4,2);
+    </script>
+
+</body>
+</html>
