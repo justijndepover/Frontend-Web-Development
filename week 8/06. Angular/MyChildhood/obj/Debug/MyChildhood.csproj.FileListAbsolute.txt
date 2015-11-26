@@ -1,0 +1,12 @@
+c:\temp\eGuidelines\Workshop\MyChildhood\MyChildhood\bin\MyChildhood.dll.config
+c:\temp\eGuidelines\Workshop\MyChildhood\MyChildhood\bin\MyChildhood.dll
+c:\temp\eGuidelines\Workshop\MyChildhood\MyChildhood\bin\MyChildhood.pdb
+c:\temp\eGuidelines\Workshop\MyChildhood\MyChildhood\obj\Debug\MyChildhood.csprojResolveAssemblyReference.cache
+c:\temp\eGuidelines\Workshop\MyChildhood\MyChildhood\obj\Debug\MyChildhood.dll
+c:\temp\eGuidelines\Workshop\MyChildhood\MyChildhood\obj\Debug\MyChildhood.pdb
+C:\Users\kevin\Desktop\TeKopieren\MyMediaTheek\MyChildhood\bin\MyChildhood.dll.config
+C:\Users\kevin\Desktop\TeKopieren\MyMediaTheek\MyChildhood\bin\MyChildhood.dll
+C:\Users\kevin\Desktop\TeKopieren\MyMediaTheek\MyChildhood\bin\MyChildhood.pdb
+C:\Users\kevin\Desktop\TeKopieren\MyMediaTheek\MyChildhood\obj\Debug\MyChildhood.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Desktop\TeKopieren\MyMediaTheek\MyChildhood\obj\Debug\MyChildhood.dll
+C:\Users\kevin\Desktop\TeKopieren\MyMediaTheek\MyChildhood\obj\Debug\MyChildhood.pdb

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GETTING STARTED</h1>
+    <input type="text" placeholder="uw naam ..." ng-model="naam"/>
+    <p>Welkom {{naam}}</p>
+
+    <h2>Eerste controller</h2>
+    <section ng-controller="demoController">
+        <p>{{person.naam + ' ' + person.voornaam}}</p>
+        <img ng-src="{{person.img}}" />
+        <button type="button" ng-click="sayHello()">Click Me</button>
+    </section>
+
+    <script src="../lib/angular/angular.js"></script>
+    <script scr="demo/Person.js"></script>
+    <script src="demo/app.js"></script>
+    <script scr="demo/demoController.js"></script>
+</body>
+</html>

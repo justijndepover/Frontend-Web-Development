@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Flickr Viewer</title>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="less/styles.css" >
+</head>
+<body>
+    <header><h1>Flickr Viewer</h1></header>
+    <div id="main">
+
+        <section ng-controller="FlickrController">
+            <img ng-hide="images" src="img/712.GIF" alt="wait..." title="wait...">
+            <fieldset ng-show="images">
+                <legend>Search Images</legend>
+
+                <div class="form-container">
+                    <label for="searchText">Zoeken op</label>
+                    <input type="text" placeholder="query..." id="searchText" class="form-control" ng-model="searchText" />
+                </div>
+
+                <div class="form-container">
+                    <label for="sortOn">Sorteren op</label>
+                    <select name="" id="sortOn" class="form-control" ng-model="sortProperty">
+                        <option value="title">Titel oplopend</option>
+                        <option value="-title">Titel aflopend</option>
+                    </select>
+                </div>
+
+                <div class="form-container">
+                    <label for="searchinImagesText">Zoek in gevonden images</label>
+                    <input type="text" id="searchinImagesText" placeholder="johan..." class="form-control" ng-model="filterquery"/>
+                </div>
+
+                <div class="form-container"><br/>
+                    <button type="button" class="btn btn-primary" ng-click="searchImages()">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+
+            </fieldset>
+
+            <div id="wrapper" ng-show="images">
+                <ul id="imagesList">
+                    <li class="flickrimage" ng-class="checkAndStyleTitle(i)" ng-repeat="i in images | orderBy:sortProperty | filter:filterImages">
+                        <flickrimage></flickrimage>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+    <footer>&copy; 2015 - NMCT (Justijn Depover)</footer>
+
+
+    <script src="../lib/angular/angular.js"></script>
+    <script src="models/FlickrImage.js"></script>
+    <script src="app.js"></script>
+    <script src="ImagesOverview/imagesOverviewController.js"></script>
+</body>
+</html>

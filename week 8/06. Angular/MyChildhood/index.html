@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="mymediapp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mijn Fotoboek</title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href="Content/normalize.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/base.css" rel="stylesheet" />
+</head>
+<body ng-controller="MediaCtrl">
+    <header>
+        <div class="logo"><a href="#">Mijn Fotoboek</a></div>
+        <br style="clear:both" />
+    </header>
+    <div id="main">
+        <div id="wrapper">
+            <aside id="categories" class="item">
+                <nav>
+                    <h2 class="navtitle">Navigation</h2>
+                    <ul>
+                        <li>Mijn fotoboek</li>
+                        <li>Instellingen</li>
+                        <li>FAQ</li>
+                    </ul>
+                    <h2 class="navtitle">Categories (5)</h2>
+                    <ul>
+                        <li>Categorie</li>
+                    </ul>
+                    <h2 class="navtitle">Types (<span ng-bind="model.types.length"></span>)</h2>
+                    <ul>
+                        <li>Hier komt de type</li>
+                    </ul>
+                </nav>
+            </aside>
+            <ul id="media">
+                <li class="item">
+                    <p>hier komt de image</p>
+                </li>
+            </ul>
+        </div>
+        <h2>Add new item to your book</h2>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group row">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" class="form-control" ng-model="newMedia.Description" />
+                </div>
+                <div class="form-group row">
+                    <label>URL</label>
+                    <input type="text" class="form-control" ng-model="newMedia.URL" />
+                </div>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Save </button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; KEVIN DERUDDER - HOWEST</p>
+    </footer>
+    <script src="Scripts/angular.min.js"></script>
+
+</body>
+</html>

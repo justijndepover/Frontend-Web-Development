@@ -1,0 +1,44 @@
+<section ng-controller="FlickrController">
+
+    <img ng-hide="images" src="img/712.GIF" title="wait..." alt="wait...">
+
+    <fieldset ng-show="images">
+        <legend>Search Images</legend>
+        <div class="form-container">
+            <label for="searchText">Zoeken op</label>
+            <input type="text"
+                   placeholder="query..."
+                   id="searchText"
+                   class="form-control"
+                   ng-model="searchText"
+                    />
+        </div>
+        <div class="form-container">
+            <label for="sortOn">Sorteren op</label>
+            <select id="sortOn" class="form-control" ng-model="sortProperty">
+                <option value="title">Titel oplopend</option>
+                <option value="-title">Titel aflopend</option>
+            </select>
+        </div>
+        <div class="form-container">
+            <label for="searchinImagesText">Zoek in gevonden images</label>
+            <input type="text" ng-model="filterQuery" class="form-control" id="searchinImagesText" placeholder="johan..." />
+        </div>
+        <div class="form-container"><br/>
+            <button type="button" class="btn btn-primary" ng-click="searchImages()">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </fieldset>
+    <div ng-show="images" id="wrapper">
+        <ul id="imagesList">
+            <li class="flickrimage" ng-class="checkAndStyleTitle(i)" ng-repeat="i in images | orderBy:sortProperty | filter: filterImages">
+
+                <flickrimage></flickrimage>
+
+
+            </li>
+        </ul>
+    </div>
+
+</section>

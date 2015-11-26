@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Flick Viewer</title>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="less/styles.css">
+</head>
+<body>
+
+    <header><h1>Flickr Viewer</h1></header>
+    <div id="main">
+        <!-- ng-view content wordt bepaald in app.js route brol -->
+        <div ng-view></div>
+
+
+    </div>
+    <footer>&copy; 2015 - NMCT (Justijn Depover)</footer>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="../lib/angular/angular-route.js"></script>
+    <script src="models/FlickrImage.js"></script>
+    <script src="app.js"></script>
+    <script src="services/flickrService.js"></script>
+    <script src="ImagesOverview/ImagesOverviewController.js"></script>
+    <script src="ImageDetails/ImageDetailsController.js"></script>
+</body>
+</html>

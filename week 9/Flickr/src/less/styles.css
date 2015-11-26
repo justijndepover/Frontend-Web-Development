@@ -1,0 +1,48 @@
+body {
+  margin: 20px;
+}
+.form-control {
+  width: 300px;
+}
+#main {
+  width: 90%;
+  margin: 30px auto;
+}
+#wrapper {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 15px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 3;
+  -moz-column-gap: 15px;
+  -moz-column-fill: auto;
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+}
+#wrapper ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#wrapper ul .flickrimage {
+  display: inline-block;
+  background: #FEFEFE;
+  border: 2px solid #e3e3e3;
+  border-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  margin: 0 1px 15px;
+  padding: 15px 15px 5px 15px;
+  width: 320px;
+}
+#wrapper ul .flickrimage img {
+  width: 100%;
+  border-bottom: 2px solid #FAFAFA;
+  margin-bottom: 5px;
+}
+.form-container {
+  float: left;
+  margin: 10px;
+}
+#wrapper ul .flickrNoTitle {
+  border: 2px solid #e30b0b;
+  border-shadow: 0 1px 2px #73080a;
+}
